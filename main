@@ -1,0 +1,27 @@
+def formecanonique(a,b,c):
+    if a == 0 :
+        return "impossible de calculer la forme canonique"
+    f = ""
+
+    if a == 1:
+        f = "(x"
+    elif a == -1:
+        f = "-(x"
+    else:
+        f = str(a) + "(x"
+    alpha = -b/(2*a)
+    beta = (-b**2 + 4*a*c)/(4*a)
+
+    if alpha  == 0:
+        f = f + ")2"
+    elif alpha > 0:
+        f = f + "-" + str(alpha) + ")2"
+    elif alpha < 0:
+        f = f + "+" + str(-alpha) + ")2"
+    else:
+        f = f + str(alpha) + ")2"
+    if beta > 0 :
+        f = f + "+" + str(beta)
+    elif beta < 0:
+        f = f + str(beta)
+    return f 
